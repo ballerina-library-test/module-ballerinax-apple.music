@@ -26,7 +26,7 @@ on:
 
 jobs:
   call_workflow:
-    name: Run Regenerate Connector Workflow
+    name: Run Auto Generate Connector Workflow
     uses: ballerina-platform/ballerina-library/.github/workflows/auto_generate_connector_template.yml@connector-automation
     secrets: inherit
     with:
