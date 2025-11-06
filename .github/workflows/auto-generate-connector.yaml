@@ -1,10 +1,10 @@
-name: Regenerate OpenAPI Connector
+name: Auto-Generate Connector
 
 on:
   workflow_dispatch:
     inputs:
       openapi-url:
-        description: "URL of the OpenAPI specification (JSON/YAML)"
+        description: "URL of the OpenAPI specification (optional)"
         required: false
         type: string
       ballerina-version:
