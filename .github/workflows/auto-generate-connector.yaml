@@ -1,0 +1,36 @@
+name: Regenerate OpenAPI Connector
+
+on:
+  workflow_dispatch:
+    inputs:
+      openapi-url:
+        description: "URL of the OpenAPI specification (JSON/YAML)"
+        required: false
+        type: string
+      ballerina-version:
+        description: "Ballerina version to use"
+        required: false
+        type: string
+        default: "nightly"
+      license-file:
+        description: "Path to license file relative to docs directory"
+        required: false
+        type: string
+        default: "license.txt"
+      quiet-mode:
+        description: "Enable quiet mode"
+        required: false
+        type: boolean
+        default: true
+
+
+jobs:
+  call_workflow:
+    name: Run Regenerate Connector Workflow
+    uses: ballerina-platform/ballerina-library/.github/workflows/auto_generate_connector_template.yml@connector-automation
+    secrets: inherit
+    with:
+      openapi-url: ${{ inputs.openapi-url }}
+      ballerina-version: ${{ inputs.ballerina-version }}
+      license-file: ${{ inputs.license-file }}
+      quiet-mode: ${{ inputs.quiet-mode }}
