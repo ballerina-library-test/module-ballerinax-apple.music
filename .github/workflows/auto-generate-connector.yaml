@@ -12,6 +12,11 @@ on:
         required: false
         type: string
         default: "nightly"
+      distribution-zip:
+        description: "Distribution of the Ballerina version to be used"
+        required: false
+        type: string
+        default: ""
       license-file:
         description: "Path to license file relative to docs directory"
         required: false
@@ -32,5 +37,6 @@ jobs:
     with:
       openapi-url: ${{ inputs.openapi-url }}
       ballerina-version: ${{ inputs.ballerina-version }}
+      distribution-zip: ${{ inputs.distribution-zip }}
       license-file: ${{ inputs.license-file }}
       quiet-mode: ${{ inputs.quiet-mode }}
