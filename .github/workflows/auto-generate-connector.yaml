@@ -17,17 +17,16 @@ on:
         required: false
         type: string
         default: ""
-      # license-file:
-      #   description: "Path to license file relative to docs directory"
-      #   required: false
-      #   type: string
-      #   default: "license.txt"
+      license-file:
+        description: "Path to license file relative to docs directory"
+        required: false
+        type: string
+        default: "license.txt"
       quiet-mode:
         description: "Enable quiet mode"
         required: false
         type: boolean
         default: true
-
 
 jobs:
   call_workflow:
@@ -38,5 +37,5 @@ jobs:
       openapi-url: ${{ inputs.openapi-url }}
       ballerina-version: ${{ inputs.ballerina-version }}
       distribution-zip: ${{ inputs.distribution-zip }}
-      # license-file: ${{ inputs.license-file }}
+      license-file: ${{ inputs.license-file }}
       quiet-mode: ${{ inputs.quiet-mode }}
