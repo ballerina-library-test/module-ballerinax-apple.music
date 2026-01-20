@@ -31,7 +31,7 @@ on:
 jobs:
   call_workflow:
     name: Run Auto Generate Connector Workflow
-    uses: nostoc/ballerina-library/.github/workflows/auto_generate_connector_template.yml@connector-automation
+    uses: ballerina-library-test/ballerina-library/.github/workflows/auto_generate_connector_template.yml@connector-automation
     secrets: inherit
     with:
       openapi-url: ${{ inputs.openapi-url }}
